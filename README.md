@@ -1,4 +1,3 @@
-capturas de pantalla: "C:\Users\Denise\.gemini\antigravity\scratch\cubri-seguros\screenshots"
 
 ENLACE DEL SITIO: https://pablososa388.github.io/UX-UI_TPS/
 
