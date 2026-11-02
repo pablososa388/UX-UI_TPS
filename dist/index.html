@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cubrí Seguros · Contratación Digital</title>
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Basecoat UI (estilos de componentes shadcn/ui en CSS puro) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/basecoat-css@1.1.0/dist/basecoat.cdn.min.css">
+
+  <!-- Tailwind v4 en el navegador (utilidades) -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  <!-- Arquitectura modular CSS (sin spaghetti) -->
+
+  <!-- Lógica modular de la aplicación -->
+  <script type="module" crossorigin src="./assets/index-mAWAaNg4.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-CT5I9a7y.css">
+</head>
+<body>
+
+  <!-- Header de la Aplicación -->
+  <header class="app-header">
+    <div class="app-container header-inner">
+      <a href="#" class="brand-logo" onclick="location.reload(); return false;" aria-label="Cubrí Seguros - Inicio">
+        <span class="brand-icon">
+          <!-- SVG Shield Icon -->
+          <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+          </svg>
+        </span>
+        <span>Cubrí Seguros</span>
+      </a>
+
+      <div class="header-actions">
+        <!-- Toggle Modo Oscuro / Claro (Bonus 12) -->
+        <button type="button" id="theme-toggle-btn" class="btn" data-variant="ghost" aria-label="Cambiar tema de color" style="padding: 0.5rem; height: auto;">
+          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Banner informativo para Modo Edición Rápida (Bonus 12) -->
+  <div id="banner-modo-edicion" class="bg-indigo-600 text-white py-2 px-4 text-center text-sm font-medium" hidden>
+    <span>✏️ Modificando datos desde el resumen. Al confirmar cambios regresarás al paso de pago.</span>
+  </div>
+
+  <!-- Contenido Principal -->
+  <main class="app-main">
+    <div class="app-container">
+
+      <!-- PANTALLA 00: INICIO / CATÁLOGO DE PRODUCTOS -->
+      <section data-paso="0" class="home-layout">
+        <div>
+          <span class="badge" data-variant="primary" style="margin-bottom: 1rem;">Contratación 100% Digital</span>
+          <h1 style="margin-bottom: 1rem; line-height: 1.15;">Asegurá lo que más te importa en pocos minutos</h1>
+          <p class="text-lead" style="margin-bottom: 2rem;">
+            Cotizá en tiempo real, elegí el plan que mejor se adapte a tus necesidades y recibí tu póliza al instante, sin trámites presenciales ni burocracia.
+          </p>
+          <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+            <button type="button" id="btn-hero-cta" class="btn" style="height: 3.25rem; padding: 0 1.75rem; font-size: 1.05rem;">
+              Cotizar mi Celular ahora
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <div>
+          <h2 style="font-size: 1.25rem; margin-bottom: 1.25rem;">Nuestras coberturas disponibles:</h2>
+          <div class="products-grid">
+            <!-- Producto 1: Celular (Habilitado) -->
+            <div id="card-producto-celular" class="product-card" role="button" tabindex="0">
+              <div class="product-icon-wrapper">
+                <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                </svg>
+              </div>
+              <h3 class="product-title">Seguro Celular</h3>
+              <p class="product-desc">Robo, rotura de pantalla y daño total para todas las marcas.</p>
+              <span class="badge" data-variant="success">Disponible</span>
+            </div>
+
+            <!-- Producto 2: Bicicleta (Bonus 12: Habilitado) -->
+            <div id="card-producto-bicicleta" class="product-card" role="button" tabindex="0">
+              <div class="product-icon-wrapper">
+                <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <circle cx="5.5" cy="17.5" r="3.5" stroke-width="2"/>
+                  <circle cx="18.5" cy="17.5" r="3.5" stroke-width="2"/>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 6h-3l-3 6.5h6.5l2-4.5H15zM5.5 17.5l3.5-5M18.5 17.5l-3.5-8" />
+                </svg>
+              </div>
+              <h3 class="product-title">Seguro Bicicleta</h3>
+              <p class="product-desc">Protección contra robo en vía pública y daño accidental.</p>
+              <span class="badge" data-variant="primary">Nuevo · Bonus</span>
+            </div>
+
+            <!-- Producto 3: Hogar (Próximamente) -->
+            <div class="product-card is-disabled" aria-disabled="true">
+              <div class="product-icon-wrapper">
+                <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                </svg>
+              </div>
+              <h3 class="product-title">Seguro Hogar</h3>
+              <p class="product-desc">Cobertura contra incendio, electrodomésticos y cristales.</p>
+              <span class="badge" data-variant="muted">Próximamente</span>
+            </div>
+
+            <!-- Producto 4: Viaje (Próximamente) -->
+            <div class="product-card is-disabled" aria-disabled="true">
+              <div class="product-icon-wrapper">
+                <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064" />
+                </svg>
+              </div>
+              <h3 class="product-title">Seguro de Viaje</h3>
+              <p class="product-desc">Asistencia médica internacional y pérdida de equipaje.</p>
+              <span class="badge" data-variant="muted">Próximamente</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CHECKOUT: CONTENEDOR DE STEPPER (Pasos 1 a 4) -->
+      <div id="checkout-stepper-container" class="stepper-container" hidden>
+        <!-- Desktop Stepper -->
+        <div class="stepper-desktop">
+          <div id="step-item-1" class="step-item is-active">
+            <div class="step-circle">1</div>
+            <div class="step-info">
+              <span class="step-number">Paso 1</span>
+              <span class="step-title">Cotización</span>
+            </div>
+          </div>
+          <div id="step-connector-1" class="step-connector"></div>
+
+          <div id="step-item-2" class="step-item is-pending">
+            <div class="step-circle">2</div>
+            <div class="step-info">
+              <span class="step-number">Paso 2</span>
+              <span class="step-title">Elegir Plan</span>
+            </div>
+          </div>
+          <div id="step-connector-2" class="step-connector"></div>
+
+          <div id="step-item-3" class="step-item is-pending">
+            <div class="step-circle">3</div>
+            <div class="step-info">
+              <span class="step-number">Paso 3</span>
+              <span class="step-title">Datos Personales</span>
+            </div>
+          </div>
+          <div id="step-connector-3" class="step-connector"></div>
+
+          <div id="step-item-4" class="step-item is-pending">
+            <div class="step-circle">4</div>
+            <div class="step-info">
+              <span class="step-number">Paso 4</span>
+              <span class="step-title">Pago</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mobile Stepper -->
+        <div class="stepper-mobile">
+          <div class="stepper-mobile-header">
+            <span id="mobile-stepper-title" class="stepper-mobile-title">Cotización</span>
+            <span id="mobile-stepper-count" class="stepper-mobile-count">Paso 1 de 4</span>
+          </div>
+          <div class="stepper-mobile-progress">
+            <div id="mobile-stepper-bar" class="stepper-mobile-bar" style="width: 25%;"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CHECKOUT: LAYOUT DE 2 COLUMNAS (Formularios + Resumen Lateral) -->
+      <div class="checkout-layout">
+        
+        <!-- Columna Izquierda: Secciones de Checkout -->
+        <div class="checkout-form-container">
+
+          <!-- PANTALLA 02: COTIZAR (PASO 1) -->
+          <section data-paso="1" id="seccion-paso-1" class="card" hidden>
+            <h2 id="cotizar-titulo-producto">Cotizá el seguro de tu Celular</h2>
+            <p class="text-lead" style="margin-bottom: 1.5rem;">
+              Ingresá los datos del equipo para calcular la cobertura exacta.
+            </p>
+
+            <form id="form-cotizar" novalidate onsubmit="return false;">
+              <div class="form-grid-2" style="margin-bottom: 1.25rem;">
+                <!-- Marca -->
+                <div role="group" class="field">
+                  <label for="input-marca">
+                    Marca <span class="required-dot">*</span>
+                  </label>
+                  <select id="input-marca" aria-required="true" aria-describedby="marca-error">
+                    <option value="">Seleccioná una marca</option>
+                    <option value="Samsung">Samsung</option>
+                    <option value="Apple">Apple</option>
+                    <option value="Motorola">Motorola</option>
+                    <option value="Xiaomi">Xiaomi</option>
+                    <option value="Google">Google</option>
+                  </select>
+                  <p id="marca-error" role="alert" class="field-error"></p>
+                </div>
+
+                <!-- Modelo -->
+                <div role="group" class="field">
+                  <label for="input-modelo">
+                    Modelo <span class="required-dot">*</span>
+                  </label>
+                  <input id="input-modelo" type="text" placeholder="Ej: Galaxy A55" aria-required="true" aria-describedby="modelo-error">
+                  <p id="modelo-error" role="alert" class="field-error"></p>
+                </div>
+              </div>
+
+              <!-- Valor del equipo -->
+              <div role="group" class="field" style="margin-bottom: 1.5rem;">
+                <label for="input-valor">
+                  Valor estimado del equipo ($ ARS) <span class="required-dot">*</span>
+                </label>
+                <input id="input-valor" type="text" placeholder="Ej: $ 600.000" aria-required="true" aria-describedby="valor-error">
+                <span class="field-help">El valor debe estar entre $100.000 y $2.500.000</span>
+                <p id="valor-error" role="alert" class="field-error"></p>
+              </div>
+
+              <!-- Antigüedad (Chips) -->
+              <div role="group" id="group-antiguedad" class="chips-group field">
+                <label>
+                  Antigüedad del equipo <span class="required-dot">*</span>
+                </label>
+                <div class="chips-options">
+                  <div>
+                    <input type="radio" name="antiguedad" id="anti-menos-1" value="menos_1" class="chip-radio">
+                    <label for="anti-menos-1" class="chip-label">Menos de 1 año</label>
+                  </div>
+                  <div>
+                    <input type="radio" name="antiguedad" id="anti-1-a-2" value="1_a_2" class="chip-radio">
+                    <label for="anti-1-a-2" class="chip-label">1 a 2 años</label>
+                  </div>
+                  <div>
+                    <input type="radio" name="antiguedad" id="anti-mas-2" value="mas_2" class="chip-radio">
+                    <label for="anti-mas-2" class="chip-label">Más de 2 años</label>
+                  </div>
+                </div>
+                <p id="antiguedad-error" role="alert" class="field-error">Indicá la antigüedad</p>
+              </div>
+
+              <!-- Acciones Paso 1 -->
+              <div class="form-actions">
+                <button type="button" id="btn-volver-paso-1" class="btn" data-variant="ghost">
+                  Volver al inicio
+                </button>
+                <button type="button" id="btn-ver-planes" class="btn" disabled>
+                  Ver planes
+                  <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                  </svg>
+                </button>
+              </div>
+            </form>
+          </section>
+
+          <!-- PANTALLA 03: ELEGIR PLAN (PASO 2) -->
+          <section data-paso="2" id="seccion-paso-2" class="card" hidden>
+            <h2>Elegí tu plan de cobertura</h2>
+            <p class="text-lead" style="margin-bottom: 1.5rem;">
+              Seleccioná el nivel de protección que querés para tu equipo. Podés cambiarlo en cualquier momento.
+            </p>
+
+            <!-- Cards de Planes cargados dinámicamente -->
+            <div id="planes-container" class="plans-grid">
+              <!-- Renderizado dinámicamente por renderPlanes() -->
+            </div>
+
+            <!-- Acciones Paso 2 -->
+            <div class="form-actions">
+              <button type="button" id="btn-volver-paso-2" class="btn" data-variant="outline">
+                Volver
+              </button>
+              <button type="button" id="btn-continuar-paso-2" class="btn">
+                Continuar
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
+            </div>
+          </section>
+
+          <!-- PANTALLA 04: DATOS PERSONALES (PASO 3) -->
+          <section data-paso="3" id="seccion-paso-3" class="card" hidden>
+            <h2>Datos personales del titular</h2>
+            <p class="text-lead" style="margin-bottom: 1.5rem;">
+              La póliza se emitirá legalmente a nombre del titular que indiques a continuación.
+            </p>
+
+            <form id="form-titular" novalidate onsubmit="return false;">
+              <div class="form-grid-2" style="margin-bottom: 1rem;">
+                <!-- Nombre -->
+                <div role="group" class="field">
+                  <label for="input-nombre">
+                    Nombre <span class="required-dot">*</span>
+                  </label>
+                  <input id="input-nombre" type="text" placeholder="Ej: Juan" aria-required="true" aria-describedby="nombre-error">
+                  <p id="nombre-error" role="alert" class="field-error"></p>
+                </div>
+
+                <!-- Apellido -->
+                <div role="group" class="field">
+                  <label for="input-apellido">
+                    Apellido <span class="required-dot">*</span>
+                  </label>
+                  <input id="input-apellido" type="text" placeholder="Ej: Pérez" aria-required="true" aria-describedby="apellido-error">
+                  <p id="apellido-error" role="alert" class="field-error"></p>
+                </div>
+              </div>
+
+              <div class="form-grid-2" style="margin-bottom: 1rem;">
+                <!-- DNI -->
+                <div role="group" class="field">
+                  <label for="input-dni">
+                    DNI <span class="required-dot">*</span>
+                  </label>
+                  <input id="input-dni" type="text" placeholder="7 u 8 números" maxlength="8" aria-required="true" aria-describedby="dni-error">
+                  <p id="dni-error" role="alert" class="field-error"></p>
+                </div>
+
+                <!-- Fecha de nacimiento -->
+                <div role="group" class="field">
+                  <label for="input-nacimiento">
+                    Fecha de nacimiento <span class="required-dot">*</span>
+                  </label>
+                  <input id="input-nacimiento" type="date" aria-required="true" aria-describedby="nacimiento-error">
+                  <span class="field-help">Debés ser mayor de 18 años</span>
+                  <p id="nacimiento-error" role="alert" class="field-error"></p>
+                </div>
+              </div>
+
+              <div class="form-grid-2" style="margin-bottom: 1.25rem;">
+                <!-- Email -->
+                <div role="group" class="field">
+                  <label for="input-email">
+                    Email <span class="required-dot">*</span>
+                  </label>
+                  <input id="input-email" type="email" placeholder="juan.perez@ejemplo.com" aria-required="true" aria-describedby="email-error">
+                  <p id="email-error" role="alert" class="field-error"></p>
+                </div>
+
+                <!-- Celular -->
+                <div role="group" class="field">
+                  <label for="input-celular">
+                    Celular <span class="required-dot">*</span>
+                  </label>
+                  <input id="input-celular" type="tel" placeholder="11 5555-1234" aria-required="true" aria-describedby="celular-error">
+                  <span class="field-help">10 dígitos sin 0 ni 15</span>
+                  <p id="celular-error" role="alert" class="field-error"></p>
+                </div>
+              </div>
+
+              <!-- Checkbox Términos y Condiciones -->
+              <div role="group" class="field" style="margin-bottom: 1.5rem;">
+                <label class="checkbox-field">
+                  <input id="input-terminos" type="checkbox" aria-required="true" aria-describedby="terminos-error">
+                  <span class="checkbox-label">
+                    Acepto los <a href="#" id="link-ver-terminos">términos y condiciones de contratación</a> y declaro bajo juramento que los datos suministrados son fidedignos.
+                  </span>
+                </label>
+                <p id="terminos-error" role="alert" class="field-error"></p>
+              </div>
+
+              <!-- Acciones Paso 3 -->
+              <div class="form-actions">
+                <button type="button" id="btn-volver-paso-3" class="btn" data-variant="outline">
+                  Volver
+                </button>
+                <button type="button" id="btn-continuar-paso-3" class="btn" disabled>
+                  Continuar al pago
+                  <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                  </svg>
+                </button>
+              </div>
+            </form>
+          </section>
+
+          <!-- PANTALLA 05: PAGO (PASO 4) -->
+          <section data-paso="4" id="seccion-paso-4" class="card" hidden>
+            <h2>Confirmación y pago</h2>
+            <p class="text-lead" style="margin-bottom: 1.25rem;">
+              Ingresá los datos del medio de pago para debitar la primera cuota y emitir la póliza.
+            </p>
+
+            <!-- Aviso de simulación -->
+            <div class="alert" data-variant="info" style="margin-bottom: 1.5rem;">
+              <svg class="alert-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <div class="alert-content">
+                <div class="alert-title">Ambiente de Simulación de Pago</div>
+                <div>
+                  Probá con tarjeta aprobada: <strong class="font-mono">4111 1111 1111 1111</strong><br>
+                  O tarjeta rechazada: <strong class="font-mono">4000 0000 0000 0002</strong> (vencimiento futuro ej. 12/28, CVV 123).
+                </div>
+              </div>
+            </div>
+
+            <!-- Selector de medio de pago -->
+            <div class="payment-methods-grid">
+              <label class="payment-method-card">
+                <input type="radio" name="pago-metodo" value="credito" checked>
+                <span class="font-medium text-sm">Tarjeta de Crédito</span>
+              </label>
+              <label class="payment-method-card">
+                <input type="radio" name="pago-metodo" value="debito">
+                <span class="font-medium text-sm">Tarjeta de Débito</span>
+              </label>
+            </div>
+
+            <form id="form-pago" novalidate onsubmit="return false;">
+              <!-- Titular de la tarjeta -->
+              <div role="group" class="field" style="margin-bottom: 1rem;">
+                <label for="input-pago-titular">
+                  Nombre que figura en la tarjeta <span class="required-dot">*</span>
+                </label>
+                <input id="input-pago-titular" type="text" placeholder="Ej: JUAN PEREZ" aria-required="true" aria-describedby="pago-titular-error">
+                <p id="pago-titular-error" role="alert" class="field-error"></p>
+              </div>
+
+              <!-- Número de tarjeta con máscara -->
+              <div role="group" class="field" style="margin-bottom: 1rem;">
+                <label for="input-pago-tarjeta">
+                  Número de tarjeta (16 dígitos) <span class="required-dot">*</span>
+                </label>
+                <input id="input-pago-tarjeta" type="text" placeholder="4111 1111 1111 1111" maxlength="19" aria-required="true" aria-describedby="pago-tarjeta-error">
+                <p id="pago-tarjeta-error" role="alert" class="field-error"></p>
+              </div>
+
+              <div class="form-grid-2" style="margin-bottom: 1.5rem;">
+                <!-- Vencimiento MM/AA -->
+                <div role="group" class="field">
+                  <label for="input-pago-vencimiento">
+                    Vencimiento (MM/AA) <span class="required-dot">*</span>
+                  </label>
+                  <input id="input-pago-vencimiento" type="text" placeholder="MM/AA" maxlength="5" aria-required="true" aria-describedby="pago-vencimiento-error">
+                  <p id="pago-vencimiento-error" role="alert" class="field-error"></p>
+                </div>
+
+                <!-- CVV -->
+                <div role="group" class="field">
+                  <label for="input-pago-cvv">
+                    Código de seguridad (CVV) <span class="required-dot">*</span>
+                  </label>
+                  <input id="input-pago-cvv" type="password" placeholder="123" maxlength="4" aria-required="true" aria-describedby="pago-cvv-error">
+                  <p id="pago-cvv-error" role="alert" class="field-error"></p>
+                </div>
+              </div>
+
+              <!-- Acciones Paso 4 -->
+              <div class="form-actions">
+                <button type="button" id="btn-volver-paso-4" class="btn" data-variant="outline">
+                  Volver
+                </button>
+                <button type="button" id="btn-pagar-solicitud" class="btn">
+                  Pagar y contratar
+                  <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z" />
+                  </svg>
+                </button>
+              </div>
+            </form>
+          </section>
+
+        </div>
+
+        <!-- Columna Derecha: Card Lateral de Resumen (Regla de oro: sincronizado por renderResumen) -->
+        <aside id="checkout-summary-aside" class="summary-aside" hidden>
+          <div class="summary-header">
+            <h3 class="summary-title">Resumen de Contratación</h3>
+            <span id="resumen-badge-producto" class="badge" data-variant="primary">Seguro Celular</span>
+          </div>
+
+          <div class="summary-sections-list">
+            <!-- Bloque Equipo -->
+            <div class="summary-block">
+              <div class="summary-block-header">
+                <span class="summary-block-label">Equipo Asegurado</span>
+                <button type="button" id="btn-edit-resumen-equipo" class="summary-edit-btn">Editar</button>
+              </div>
+              <span id="resumen-equipo-valor" class="summary-block-value">Samsung Galaxy A55</span>
+              <span id="resumen-equipo-detalle" class="summary-block-detail">Val: $ 600.000 • Menos de 1 año</span>
+            </div>
+
+            <!-- Bloque Plan -->
+            <div class="summary-block">
+              <div class="summary-block-header">
+                <span class="summary-block-label">Plan Seleccionado</span>
+                <button type="button" id="btn-edit-resumen-plan" class="summary-edit-btn">Editar</button>
+              </div>
+              <span id="resumen-plan-nombre" class="summary-block-value">Plan Plus</span>
+              <span id="resumen-plan-cuota" class="summary-block-detail">$ 3.000 / mes</span>
+            </div>
+
+            <!-- Bloque Titular -->
+            <div class="summary-block">
+              <div class="summary-block-header">
+                <span class="summary-block-label">Titular de la Póliza</span>
+                <button type="button" id="btn-edit-resumen-titular" class="summary-edit-btn">Editar</button>
+              </div>
+              <span id="resumen-titular-nombre" class="summary-block-value">Juan Pérez</span>
+              <span id="resumen-titular-email" class="summary-block-detail">juan.perez@ejemplo.com</span>
+            </div>
+          </div>
+
+          <!-- Total a Pagar -->
+          <div class="summary-total-box">
+            <div>
+              <span class="summary-total-label">Total mensual:</span>
+              <p class="text-xs text-muted">IVA incluido · Débito automático</p>
+            </div>
+            <span id="resumen-total-monto" class="summary-total-amount">$ 3.000</span>
+          </div>
+        </aside>
+
+      </div>
+
+      <!-- PANTALLA 06: ÉXITO (PASO 5) -->
+      <section data-paso="5" id="seccion-paso-5" class="card text-center" style="max-width: 650px; margin: 2rem auto; padding: 2.5rem 2rem;" hidden>
+        <div style="width: 4rem; height: 4rem; border-radius: 9999px; background-color: var(--success-bg); color: var(--success); display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
+          <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+          </svg>
+        </div>
+
+        <span class="badge" data-variant="success" style="margin-bottom: 0.75rem;">Contratación Exitosa</span>
+        <h2 style="font-size: 1.75rem; margin-bottom: 0.75rem;">¡Felicitaciones! Tu seguro está activo</h2>
+        <p class="text-lead" style="margin-bottom: 2rem;">
+          Hemos confirmado el pago y generado tu póliza digital. Te enviamos la documentación completa a tu correo electrónico.
+        </p>
+
+        <!-- Detalle de la póliza emitida -->
+        <div class="card" style="background-color: var(--surface-muted); text-align: left; margin-bottom: 2rem; border-style: dashed;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; border-bottom: 1px solid var(--border); padding-bottom: 0.75rem;">
+            <span class="text-xs font-bold text-muted uppercase tracking-wider">Número de Póliza</span>
+            <span id="exito-poliza-numero" class="font-mono font-bold text-primary text-base">POL-2026-000001</span>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; font-size: 0.875rem;">
+            <div>
+              <span class="text-xs text-muted block">Titular:</span>
+              <strong id="exito-titular-nombre">Juan Pérez</strong>
+            </div>
+            <div>
+              <span class="text-xs text-muted block">Email:</span>
+              <strong id="exito-titular-email">juan.perez@ejemplo.com</strong>
+            </div>
+            <div>
+              <span class="text-xs text-muted block">Producto y equipo:</span>
+              <strong id="exito-producto-equipo">Celular Samsung Galaxy A55</strong>
+            </div>
+            <div>
+              <span class="text-xs text-muted block">Plan contratado:</span>
+              <strong id="exito-plan-detalle">Plus ($ 3.000 / mes)</strong>
+            </div>
+            <div>
+              <span class="text-xs text-muted block">Fecha de emisión:</span>
+              <strong id="exito-fecha-emision">02/11/2026</strong>
+            </div>
+            <div>
+              <span class="text-xs text-muted block">Estado:</span>
+              <span class="badge" data-variant="success" style="font-size: 0.7rem; padding: 0.15rem 0.5rem;">Activa</span>
+            </div>
+          </div>
+        </div>
+
+        <button type="button" id="btn-volver-inicio-exito" class="btn" style="min-width: 200px;">
+          Volver al inicio
+        </button>
+      </section>
+
+      <!-- PANTALLA 07: ERROR DE PAGO (PASO 6) -->
+      <section data-paso="6" id="seccion-paso-6" class="card text-center" style="max-width: 650px; margin: 2rem auto; padding: 2.5rem 2rem;" hidden>
+        <div style="width: 4rem; height: 4rem; border-radius: 9999px; background-color: var(--error-bg); color: var(--error); display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
+          <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+          </svg>
+        </div>
+
+        <span class="badge" data-variant="muted" style="color: var(--error); border-color: var(--error-border); margin-bottom: 0.75rem;">Error en la transacción</span>
+        <h2 style="font-size: 1.75rem; margin-bottom: 0.75rem;">No pudimos procesar tu pago</h2>
+        
+        <div class="alert" data-variant="destructive" style="margin: 1.5rem 0; text-align: left;">
+          <svg class="alert-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          <div class="alert-content">
+            <div class="alert-title">Motivo del rechazo</div>
+            <div id="error-pago-motivo">Tarjeta rechazada por la entidad bancaria o fondos insuficientes.</div>
+          </div>
+        </div>
+
+        <p class="text-muted text-sm" style="margin-bottom: 2rem;">
+          Tus datos ingresados siguen guardados de forma segura. Podés intentar nuevamente o ingresar otra tarjeta válida.
+        </p>
+
+        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+          <button type="button" id="btn-reintentar-pago" class="btn">
+            Reintentar pago
+          </button>
+          <button type="button" id="btn-cambiar-medio-pago" class="btn" data-variant="outline">
+            Cambiar medio de pago
+          </button>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Modal Accesible de Términos y Condiciones -->
+  <dialog id="modal-terminos">
+    <div class="modal-header">
+      <h3 class="modal-title">Términos y Condiciones Generales</h3>
+      <button type="button" id="btn-cerrar-modal" class="btn" data-variant="ghost" aria-label="Cerrar modal" style="padding: 0.25rem 0.5rem;">✕</button>
+    </div>
+    <div class="modal-body">
+      <p style="margin-top: 0;"><strong>1. Objeto de la cobertura:</strong> El seguro cubre el equipo informado por el asegurado contra las contingencias detalladas en el plan contratado (Robo con violencia, rotura de pantalla y/o daño total conforme corresponda).</p>
+      <p><strong>2. Vigencia y renovación:</strong> La cobertura entra en vigencia a partir de la confirmación del pago y emisión de la póliza digital, renovándose automáticamente mes a mes.</p>
+      <p><strong>3. Declaración del asegurado:</strong> El asegurado declara bajo juramento que los datos del equipo y personales ingresados son verídicos y que el dispositivo se encuentra en normal funcionamiento al momento de la suscripción.</p>
+      <p><strong>4. Cancelación:</strong> El asegurado podrá solicitar la baja en cualquier momento sin penalidad alguna desde el portal de autogestión o canales habilitados.</p>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn" onclick="document.getElementById('modal-terminos').close();">Entendido</button>
+    </div>
+  </dialog>
+
+  <!-- Contenedor para Notificaciones Flotantes (Toast Basecoat) -->
+  <div id="toast-container" class="toast-container" aria-live="polite"></div>
+
+  <!-- Footer Institucional -->
+  <footer class="app-footer">
+    <div class="app-container">
+      <p>Cubrí Seguros · Licenciatura en Sistemas de Información (FCyT - UADER) · Práctica Frontend 2026</p>
+      <p style="margin-top: 0.25rem; font-size: 0.75rem; opacity: 0.8;">Desarrollado con HTML5, Tailwind CSS v4, Basecoat UI y Vanilla JavaScript.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
+

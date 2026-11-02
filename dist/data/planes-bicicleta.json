@@ -1,0 +1,31 @@
+[
+  {
+    "id": "basico",
+    "nombre": "Básico",
+    "tasaAnual": 0.04,
+    "coberturas": [
+      "Robo con violencia en vía pública"
+    ]
+  },
+  {
+    "id": "plus",
+    "nombre": "Plus",
+    "tasaAnual": 0.06,
+    "recomendado": true,
+    "coberturas": [
+      "Robo con violencia en vía pública",
+      "Daño por accidente o caída"
+    ]
+  },
+  {
+    "id": "premium",
+    "nombre": "Premium",
+    "tasaAnual": 0.09,
+    "coberturas": [
+      "Robo con violencia en vía pública",
+      "Daño por accidente o caída",
+      "Hurto de accesorios y traslado"
+    ]
+  }
+]
+

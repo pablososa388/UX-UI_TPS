@@ -1,9 +1,43 @@
-# Cubrí Seguros · Flujo de Contratación Digital
+capturas de pantalla: "C:\Users\Denise\.gemini\antigravity\scratch\cubri-seguros\screenshots"
+
+ENLACE DEL SITIO: https://pablososa388.github.io/UX-UI_TPS/
 
 Trabajo Práctico Frontend · Licenciatura en Sistemas de Información (FCyT - UADER)  
 **Diseño UXUI - 2026**
 
 Sitio web interactivo para la cotización y contratación digital de seguros, maquetado con máxima fidelidad a partir del diseño de Figma, desarrollado con **HTML5, Tailwind CSS v4, Basecoat UI y JavaScript vanilla** (sin frameworks).
+
+---
+
+## 📸 Capturas de Pantalla
+
+### 🖥️ Vistas Desktop (1440px)
+*Ubicación: `screenshots/screens1440px/`*
+
+| 01. Inicio / Catálogo | 02. Elegir Plan |
+| :---: | :---: |
+| <img src="screenshots/screens1440px/inicio.png" width="480" alt="Inicio Desktop" /> | <img src="screenshots/screens1440px/elegir%20plan.png" width="480" alt="Elegir Plan Desktop" /> |
+
+| 03. Datos Personales | 04. Confirmación y Pago |
+| :---: | :---: |
+| <img src="screenshots/screens1440px/datos%20personales.png" width="480" alt="Datos Personales Desktop" /> | <img src="screenshots/screens1440px/confirmacion%20y%20pago.png" width="480" alt="Confirmación y Pago Desktop" /> |
+
+| 05. Contratación Exitosa | 06. Tarjeta Rechazada (Simulación) |
+| :---: | :---: |
+| <img src="screenshots/screens1440px/contratacion%20exitosa.png" width="480" alt="Éxito Desktop" /> | <img src="screenshots/screens1440px/tarjeta%20rechazada.png" width="480" alt="Tarjeta Rechazada Desktop" /> |
+
+---
+
+### 📱 Vistas Mobile (390px)
+*Ubicación: `screenshots/screens390px/`*
+
+| 01. Inicio | 02. Cotización | 03. Resumen de Plan |
+| :---: | :---: | :---: |
+| <img src="screenshots/screens390px/inicio%20390px.png" width="240" alt="Inicio Mobile" /> | <img src="screenshots/screens390px/cotizacion%202%20390px.png" width="240" alt="Cotización Mobile" /> | <img src="screenshots/screens390px/resumen%20de%20plan%20390px.png" width="240" alt="Resumen Plan Mobile" /> |
+
+| 04. Completar Datos | 05. Confirmación y Pago | 06. Pago Exitoso | 07. Tarjeta Rechazada |
+| :---: | :---: | :---: | :---: |
+| <img src="screenshots/screens390px/completar%20datos%20390px.png" width="220" alt="Datos Mobile" /> | <img src="screenshots/screens390px/confirmacion%20y%20pago%20390px.png" width="220" alt="Pago Mobile" /> | <img src="screenshots/screens390px/pago%20exitoso%20390px.png" width="220" alt="Éxito Mobile" /> | <img src="screenshots/screens390px/tarjeta%20rechazada%20390px.png" width="220" alt="Rechazo Mobile" /> |
 
 ---
 
@@ -52,6 +86,9 @@ cubri-seguros/
 ├── .github/
 │   └── workflows/
 │       └── deploy.yml           ← Workflow CI/CD automático para GitHub Pages
+├── screenshots/
+│   ├── screens1440px/           ← Capturas en resolución Desktop (1440px)
+│   └── screens390px/            ← Capturas en resolución Mobile (390px)
 ├── css/
 │   ├── main.css                 ← Orquestador de imports CSS
 │   ├── tokens.css               ← Variables CSS (colores de Figma, radios, tipografía)
@@ -141,6 +178,34 @@ $$\text{cuota} = \text{Math.round}(\text{valor} \times \text{tasaAnual} / 12 \ti
   - Resultado: Deshabilita el botón durante 1,5 segundos mostrando "Procesando pago...", emite la póliza en formato `POL-AAAA-NNNNNN` y navega a la pantalla de éxito.
 - **Tarjeta Rechazada**: `4000 0000 0000 0002`.
   - Resultado: Navega a la pantalla de error de pago. El botón "Reintentar" o "Cambiar medio de pago" regresa al formulario conservando todos los datos intactos.
+
+---
+
+## 📸 Capturas de Pantalla (Las 7 Pantallas)
+
+Guardá tus capturas dentro de la carpeta `docs/screenshots/` con estos nombres para que GitHub las muestre automáticamente:
+
+### 1. Pantalla 01: Inicio / Catálogo
+![Inicio y Catálogo](docs/screenshots/01-inicio.png)
+
+### 2. Pantalla 02: Cotizar (Paso 1)
+![Paso 1 Cotizar](docs/screenshots/02-cotizar.png)
+
+### 3. Pantalla 03: Elegir Plan (Paso 2)
+![Paso 2 Elegir Plan](docs/screenshots/03-planes.png)
+
+### 4. Pantalla 04: Datos Personales (Paso 3)
+![Paso 3 Datos Personales](docs/screenshots/04-datos.png)
+
+### 5. Pantalla 05: Confirmación y Pago (Paso 4)
+![Paso 4 Pago](docs/screenshots/05-pago.png)
+
+### 6. Pantalla 06: Éxito (Póliza Emitida)
+![Paso 5 Éxito](docs/screenshots/06-exito.png)
+
+### 7. Pantalla 07: Error de Pago (Rechazo Simulado)
+*(Se obtiene al pagar con la tarjeta de prueba: `4000 0000 0000 0002`)*  
+![Paso 6 Error de Pago](docs/screenshots/07-error.png)
 
 ---
 
