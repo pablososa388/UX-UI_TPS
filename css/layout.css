@@ -1,0 +1,192 @@
+/* css/layout.css
+ * Estructuras de layout, contenedores y responsive
+ */
+
+.app-container {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+  .app-container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .app-container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+/* Header & Barra de navegación */
+.app-header {
+  border-bottom: 1px solid var(--border);
+  background-color: var(--surface);
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  transition: background-color var(--transition-normal), border-color var(--transition-normal);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 4rem;
+}
+
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  font-weight: 800;
+  font-size: 1.25rem;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.brand-icon {
+  width: 2rem;
+  height: 2rem;
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* Main Content Area */
+.app-main {
+  flex: 1;
+  padding-top: 1.5rem;
+  padding-bottom: 4rem;
+}
+
+@media (min-width: 1024px) {
+  .app-main {
+    padding-top: 2.5rem;
+    padding-bottom: 5rem;
+  }
+}
+
+/* Layout Checkout (Desktop vs Mobile) */
+.checkout-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+@media (min-width: 1024px) {
+  .checkout-layout {
+    grid-template-columns: 1fr 380px;
+    gap: 2rem;
+  }
+}
+
+/* Formulario principal en checkout */
+.checkout-form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Footer de acciones en formularios (Botones Volver / Continuar) */
+.form-actions {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 0.75rem;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+}
+
+@media (min-width: 640px) {
+  .form-actions {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+/* Layout Paso 0: Inicio */
+.home-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  align-items: center;
+  padding-top: 1rem;
+}
+
+@media (min-width: 1024px) {
+  .home-layout {
+    grid-template-columns: 1.1fr 1fr;
+    gap: 3.5rem;
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+  }
+}
+
+/* Grilla de productos */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+@media (min-width: 640px) {
+  .products-grid {
+    gap: 1.25rem;
+  }
+}
+
+/* Layout de campos de formulario responsivo */
+.form-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 640px) {
+  .form-grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+}
+
+.form-grid-3 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 640px) {
+  .form-grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+  }
+}
+
+/* Footer general del sitio */
+.app-footer {
+  border-top: 1px solid var(--border);
+  background-color: var(--surface);
+  padding: 2rem 0;
+  color: var(--text-muted);
+  font-size: var(--font-size-help);
+  text-align: center;
+  transition: background-color var(--transition-normal), border-color var(--transition-normal);
+}
+

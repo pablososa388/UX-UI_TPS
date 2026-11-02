@@ -1,0 +1,56 @@
+/* css/tokens.css
+ * Design tokens para Cubrí Seguros
+ * Basado en las especificaciones de diseño y Basecoat UI
+ */
+
+:root {
+  /* Colores primarios */
+  --primary: #4F46E5;        /* indigo-600 */
+  --primary-hover: #4338CA;  /* indigo-700 */
+  --primary-700: #3730A3;    /* indigo-800 */
+  --primary-50: #EEF2FF;     /* indigo-50 */
+  --primary-foreground: #FFFFFF;
+
+  /* Colores de estado */
+  --success: #059669;        /* emerald-600 */
+  --success-bg: #ECFDF5;     /* emerald-50 */
+  --success-border: #A7F3D0; /* emerald-200 */
+  --error: #DC2626;          /* red-600 */
+  --error-bg: #FEF2F2;        /* red-50 */
+  --error-border: #FECACA;   /* red-200 */
+
+  /* Neutrales */
+  --text: #0F172A;           /* slate-900 */
+  --text-muted: #64748B;     /* slate-500 */
+  --text-subtle: #94A3B8;    /* slate-400 */
+  --border: #E2E8F0;         /* slate-200 */
+  --border-focus: #4F46E5;
+  --bg: #F5F7FB;             /* Fondo de página */
+  --surface: #FFFFFF;        /* Fondo de tarjetas */
+  --surface-muted: #F8FAFC;  /* slate-50 */
+
+  /* Geometría y bordes */
+  --radius-sm: 0.375rem;     /* 6px */
+  --radius: 0.75rem;         /* 12px */
+  --radius-lg: 1rem;         /* 16px */
+  --radius-full: 9999px;
+
+  /* Sombras */
+  --shadow-sm: 0 1px 2px 0 rgba(15, 23, 42, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(15, 23, 42, 0.08), 0 2px 4px -2px rgba(15, 23, 42, 0.05);
+  --shadow-lg: 0 10px 15px -3px rgba(15, 23, 42, 0.08), 0 4px 6px -4px rgba(15, 23, 42, 0.03);
+  --shadow-focus: 0 0 0 3px rgba(79, 70, 229, 0.25);
+
+  /* Tipografía */
+  --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-size-h1: 2rem;       /* 32px */
+  --font-size-h2: 1.5rem;     /* 24px - H2 24/800 */
+  --font-size-lead: 0.9375rem;/* 15px - lead 15/400 */
+  --font-size-label: 0.8125rem;/* 13px - label 13/600 */
+  --font-size-help: 0.75rem;  /* 12px - help 12/400 */
+
+  /* Transiciones */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+

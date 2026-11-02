@@ -1,0 +1,110 @@
+/* css/base.css
+ * Reseteo básico, tipografía y utilidades globales
+ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: var(--font-family);
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+  transition: background-color var(--transition-normal), color var(--transition-normal);
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Escala tipográfica según especificación */
+h1 {
+  font-size: var(--font-size-h1);
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  color: var(--text);
+  margin-top: 0;
+}
+
+h2 {
+  font-size: var(--font-size-h2);
+  font-weight: 800;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.text-lead {
+  font-size: var(--font-size-lead);
+  font-weight: 400;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.text-muted {
+  color: var(--text-muted);
+}
+
+.text-label {
+  font-size: var(--font-size-label);
+  font-weight: 600;
+  color: var(--text);
+}
+
+.text-help {
+  font-size: var(--font-size-help);
+  font-weight: 400;
+  color: var(--text-muted);
+}
+
+/* Enlaces y botones interactivos */
+a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  text-decoration: underline;
+  color: var(--primary-hover);
+}
+
+:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* Utilidad oculta accesible para lectores de pantalla */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Transición suave para secciones */
+[data-paso] {
+  transition: opacity var(--transition-normal) ease-in-out;
+}
+
+[hidden] {
+  display: none !important;
+}
+

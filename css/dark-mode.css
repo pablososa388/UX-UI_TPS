@@ -1,0 +1,76 @@
+/* css/dark-mode.css
+ * Adaptación de tokens y estilos para modo oscuro
+ */
+
+html.dark {
+  --primary: #6366F1;        /* indigo-500 más brillante en oscuro */
+  --primary-hover: #4F46E5;  /* indigo-600 */
+  --primary-700: #818CF8;    /* indigo-400 para textos en dark */
+  --primary-50: rgba(99, 102, 241, 0.12); /* tinte suave */
+  --primary-foreground: #FFFFFF;
+
+  --success: #10B981;        /* emerald-500 */
+  --success-bg: rgba(16, 185, 129, 0.12);
+  --success-border: rgba(16, 185, 129, 0.3);
+
+  --error: #EF4444;          /* red-500 */
+  --error-bg: rgba(239, 68, 68, 0.12);
+  --error-border: rgba(239, 68, 68, 0.3);
+
+  --text: #F1F5F9;           /* slate-100 */
+  --text-muted: #94A3B8;     /* slate-400 */
+  --text-subtle: #64748B;    /* slate-500 */
+  --border: #334155;         /* slate-700 */
+  --border-focus: #6366F1;
+  --bg: #0B0F19;             /* Fondo oscuro profundo */
+  --surface: #151C2C;        /* Tarjetas oscuro */
+  --surface-muted: #1E293B;  /* slate-800 */
+
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -2px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -4px rgba(0, 0, 0, 0.3);
+  --shadow-focus: 0 0 0 3px rgba(99, 102, 241, 0.35);
+
+  color-scheme: dark;
+}
+
+/* Ajustes específicos de Basecoat en modo oscuro */
+html.dark .card {
+  background-color: var(--surface);
+  border-color: var(--border);
+  color: var(--text);
+}
+
+html.dark .btn[data-variant="outline"] {
+  border-color: var(--border);
+  color: var(--text);
+  background-color: transparent;
+}
+
+html.dark .btn[data-variant="outline"]:hover {
+  background-color: var(--surface-muted);
+}
+
+html.dark .btn[data-variant="ghost"] {
+  color: var(--text-muted);
+}
+
+html.dark .btn[data-variant="ghost"]:hover {
+  background-color: var(--surface-muted);
+  color: var(--text);
+}
+
+html.dark input,
+html.dark select,
+html.dark textarea {
+  background-color: var(--surface-muted);
+  border-color: var(--border);
+  color: var(--text);
+}
+
+html.dark input:focus,
+html.dark select:focus {
+  border-color: var(--primary);
+  background-color: var(--surface-muted);
+}
+

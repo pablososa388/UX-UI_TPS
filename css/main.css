@@ -1,0 +1,16 @@
+/* css/main.css
+ * Hoja de estilos principal que consolida la arquitectura modular de CSS
+ * Respeta la separación estricta de responsabilidades 
+ */
+
+@import "tokens.css";
+@import "base.css";
+@import "layout.css";
+@import "components/stepper.css";
+@import "components/forms.css";
+@import "components/cards.css";
+@import "components/summary.css";
+@import "components/alert.css";
+@import "components/toast.css";
+@import "components/modal.css";
+@import "dark-mode.css";

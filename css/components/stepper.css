@@ -1,0 +1,164 @@
+/* css/components/stepper.css
+ * Componente Stepper de 4 pasos con estados: completado, activo, pendiente
+ */
+
+.stepper-container {
+  margin-bottom: 2rem;
+}
+
+/* Stepper para desktop */
+.stepper-desktop {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .stepper-desktop {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    padding: 0.5rem 0;
+  }
+}
+
+.step-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  position: relative;
+  z-index: 2;
+  background-color: var(--bg);
+  padding: 0 0.5rem;
+  transition: all var(--transition-fast);
+}
+
+.step-circle {
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--font-size-label);
+  font-weight: 700;
+  transition: all var(--transition-normal);
+  border: 2px solid transparent;
+}
+
+.step-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.step-number {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.step-title {
+  font-size: var(--font-size-label);
+  font-weight: 600;
+  color: var(--text);
+  white-space: nowrap;
+}
+
+/* Línea conectora entre pasos */
+.step-connector {
+  flex: 1;
+  height: 2px;
+  background-color: var(--border);
+  margin: 0 0.5rem;
+  transition: background-color var(--transition-normal);
+}
+
+.step-connector.is-active {
+  background-color: var(--primary);
+}
+
+/* Estados del paso */
+/* 1. Pendiente */
+.step-item.is-pending .step-circle {
+  background-color: var(--surface);
+  border-color: var(--border);
+  color: var(--text-subtle);
+}
+
+.step-item.is-pending .step-title {
+  color: var(--text-subtle);
+}
+
+/* 2. Activo */
+.step-item.is-active .step-circle {
+  background-color: var(--primary);
+  color: var(--primary-foreground);
+  box-shadow: 0 0 0 4px var(--primary-50);
+}
+
+.step-item.is-active .step-title {
+  color: var(--primary);
+  font-weight: 700;
+}
+
+/* 3. Completo */
+.step-item.is-complete .step-circle {
+  background-color: var(--success);
+  color: #FFFFFF;
+}
+
+.step-item.is-complete .step-title {
+  color: var(--text);
+}
+
+/* Stepper para Mobile */
+.stepper-mobile {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+@media (min-width: 768px) {
+  .stepper-mobile {
+    display: none;
+  }
+}
+
+.stepper-mobile-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.stepper-mobile-title {
+  font-size: var(--font-size-label);
+  font-weight: 700;
+  color: var(--text);
+}
+
+.stepper-mobile-count {
+  font-size: var(--font-size-help);
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.stepper-mobile-progress {
+  width: 100%;
+  height: 6px;
+  background-color: var(--border);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.stepper-mobile-bar {
+  height: 100%;
+  background-color: var(--primary);
+  border-radius: var(--radius-full);
+  transition: width var(--transition-normal) ease;
+}
+

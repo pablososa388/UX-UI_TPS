@@ -1,0 +1,51 @@
+/* css/components/modal.css
+ * Diálogo modal accesible para Términos y Condiciones
+ */
+
+dialog {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background-color: var(--surface);
+  color: var(--text);
+  padding: 0;
+  max-width: 550px;
+  width: 90vw;
+  box-shadow: var(--shadow-lg);
+}
+
+dialog::backdrop {
+  background-color: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(4px);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.modal-title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.modal-body {
+  padding: 1.5rem;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  max-height: 60vh;
+  overflow-y: auto;
+  color: var(--text-muted);
+}
+
+.modal-footer {
+  padding: 1rem 1.5rem;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: flex-end;
+  background-color: var(--surface-muted);
+}
+

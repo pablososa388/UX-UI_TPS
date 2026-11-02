@@ -1,0 +1,224 @@
+/* css/components/cards.css
+ * Tarjetas de productos, planes y contenedores (estilo Basecoat UI)
+ */
+
+/* Tarjeta base (.card) */
+.card {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  padding: 1.5rem;
+  transition: all var(--transition-fast);
+}
+
+/* Tarjetas del catálogo de productos (Paso 0) */
+.product-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 1.5rem;
+  background-color: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  cursor: pointer;
+  position: relative;
+  transition: all var(--transition-fast);
+  text-align: left;
+}
+
+.product-card:hover:not(.is-disabled) {
+  border-color: var(--primary);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.product-card.is-disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  background-color: var(--surface-muted);
+}
+
+.product-icon-wrapper {
+  width: 3rem;
+  height: 3rem;
+  border-radius: var(--radius-sm);
+  background-color: var(--primary-50);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.product-card.is-disabled .product-icon-wrapper {
+  background-color: var(--border);
+  color: var(--text-muted);
+}
+
+.product-title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 0.25rem;
+}
+
+.product-desc {
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+  margin-bottom: 0.75rem;
+}
+
+/* Badges estilo Basecoat UI */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.625rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  border-radius: var(--radius-full);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  background-color: var(--surface-muted);
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+}
+
+.badge[data-variant="primary"] {
+  background-color: var(--primary);
+  color: #FFFFFF;
+  border-color: var(--primary);
+}
+
+.badge[data-variant="success"] {
+  background-color: var(--success-bg);
+  color: var(--success);
+  border-color: var(--success-border);
+}
+
+.badge[data-variant="muted"] {
+  background-color: var(--surface-muted);
+  color: var(--text-muted);
+}
+
+/* Grilla de Planes (Paso 2) */
+.plans-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+@media (min-width: 768px) {
+  .plans-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+  }
+}
+
+/* Tarjeta interactiva de Plan */
+.plan-card-wrapper {
+  display: block;
+  cursor: pointer;
+  position: relative;
+  user-select: none;
+}
+
+.plan-radio {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.plan-card-inner {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  background-color: var(--surface);
+  padding: 1.5rem;
+  position: relative;
+  transition: all var(--transition-fast);
+}
+
+.plan-card-wrapper:hover .plan-card-inner {
+  border-color: var(--primary);
+}
+
+/* Estado Seleccionado */
+.plan-radio:checked + .plan-card-inner {
+  border-color: var(--primary);
+  background-color: var(--surface);
+  box-shadow: 0 0 0 1px var(--primary), var(--shadow-md);
+}
+
+.plan-badge-recommended {
+  position: absolute;
+  top: -0.75rem;
+  right: 1.25rem;
+}
+
+.plan-header {
+  margin-bottom: 1rem;
+}
+
+.plan-name {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 0.25rem;
+}
+
+.plan-rate {
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+}
+
+.plan-price-wrapper {
+  margin-bottom: 1.25rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.plan-price {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--text);
+  letter-spacing: -0.02em;
+}
+
+.plan-frequency {
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.plan-features-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+  flex: 1;
+}
+
+.plan-feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  font-size: 0.8125rem;
+  color: var(--text);
+  line-height: 1.4;
+}
+
+.plan-feature-icon {
+  width: 1rem;
+  height: 1rem;
+  color: var(--success);
+  flex-shrink: 0;
+  margin-top: 0.125rem;
+}
+
